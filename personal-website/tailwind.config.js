@@ -7,7 +7,12 @@ export default {
   theme: {
     extend: {
       colors:{
-        "box-shadow-gray": "#707070"
+        "box-shadow-gray": "#707070",
+        "border-gray": "#282828"
+      },
+      maxWidth: {
+        '8xl': '96rem',
+        '9xl': '104rem'
       }
     },
   },
