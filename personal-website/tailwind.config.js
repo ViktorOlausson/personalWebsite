@@ -8,7 +8,9 @@ export default {
     extend: {
       colors:{
         "box-shadow-gray": "#707070",
-        "border-gray": "#282828"
+        "border-gray": "#282828",
+        "button-color": "#a688fa",
+        "primary": "#121212",
       },
       maxWidth: {
         '8xl': '96rem',

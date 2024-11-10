@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='min-h-screen flex flex-wrap content-between primary'>
+    <div className='min-h-screen flex flex-wrap content-between bg-primary'>
       <div className='w-full block'>
         <Header/>
         <main>

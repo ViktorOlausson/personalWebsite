@@ -2,7 +2,20 @@ import React from 'react'
 import Container from '../Container/Container'
 import "../../index.css"
 import Button from '../Button'
-import { BeakerIcon, ViewfinderCircleIcon, HomeIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid'
+import { BeakerIcon, HomeIcon, BriefcaseIcon, InformationCircleIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+
+const iconSize = "size-6"
+const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color"
+const buttonPadding = "px-3"
+const paragraphStyle = "mx-1.5 font-semibold"
+
+const navItems = [
+  {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
+  {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
+  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>},
+  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>},
+  {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>},
+]
 
 function Header() {
   return (
@@ -18,18 +31,39 @@ function Header() {
           {/* Ändra färger på knappar?? */}
               <ul className='flex ml-auto'>
                 <li className='mx-2'>
-                  <Button className='h-full flex items-center duration-200' rounded='' padding='px-3' bgColor='menuButtonHover'>
+                  <Button className={buttonStyle} padding={buttonPadding}>
                       <HomeIcon className="size-5"/>
-                      <p className='px-1.5'>Home</p>
+                      <p className={paragraphStyle}>Home</p>
                   </Button>
                 </li>
                 <li className='mx-2'>
-                  <Button className='h-full flex items-center duration-200' rounded='' padding='px-3' bgColor='menuButtonHover'>
+                  <Button className={buttonStyle} padding={buttonPadding}>
                     {/* annan icon?? */}
-                      <BeakerIcon className="size-5"/>
-                      <p className='mx-1.5'>Projects</p>
+                      {navItems[1].icon}
+                      <p className={paragraphStyle}>Projects</p>
                   </Button>
                 </li>
+                <li className='mx-2'>
+                  <Button className={buttonStyle} padding={buttonPadding}>
+                    {/* annan icon?? */}
+                      <BriefcaseIcon className="size-5"/>
+                      <p className='mx-1.5 font-semibold'>Experience</p>
+                  </Button>
+                </li>
+                <li className='mx-2'>
+                  <Button className={buttonStyle} padding={buttonPadding}>
+                      <InformationCircleIcon className="size-5"/>
+                      <p className={paragraphStyle}>About Me</p>
+                  </Button>
+                </li>
+                <li className='mx-2'>
+                  <Button className={buttonStyle} padding={buttonPadding}>
+                    {/* annan icon?? */}
+                      <EnvelopeIcon className="size-5"/>
+                      <p className={paragraphStyle}>Contact</p>
+                  </Button>
+                </li>
+                
               </ul>
           
         </nav>

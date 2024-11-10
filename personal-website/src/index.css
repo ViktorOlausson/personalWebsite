@@ -76,14 +76,10 @@ textarea:focus, input:focus{
   outline: none;
 }
 
-button:hover{
+/* button:hover{
 cursor: pointer;
-}
+} */
 
 .buttonColor:hover{
 background-color: #2f2b3a;
-}
-
-.menuButtonHover:hover{
-background-color: #a688fa;
 }
