@@ -8,11 +8,12 @@ const iconSize = "size-6"
 const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color"
 const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
+const liStyle = "mx-2"
 
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
   {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
-  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>},
+  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>, dropdownItems:[{}]},
   {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>},
   {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>},
 ]
@@ -30,7 +31,7 @@ function Header() {
           </div>
           {/* Ändra färger på knappar?? */}
               <ul className='flex ml-auto'>
-                <li className='mx-2'>
+                {/* <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding}>
                       <HomeIcon className="size-5"/>
                       <p className={paragraphStyle}>Home</p>
@@ -38,14 +39,12 @@ function Header() {
                 </li>
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding}>
-                    {/* annan icon?? */}
                       {navItems[1].icon}
                       <p className={paragraphStyle}>Projects</p>
                   </Button>
                 </li>
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding}>
-                    {/* annan icon?? */}
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
                   </Button>
@@ -58,11 +57,22 @@ function Header() {
                 </li>
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding}>
-                    {/* annan icon?? */}
                       <EnvelopeIcon className="size-5"/>
                       <p className={paragraphStyle}>Contact</p>
                   </Button>
-                </li>
+                </li> */}
+
+                {navItems.map((item) => (
+                  <li className={liStyle} key={item.name} padding={buttonPadding}>
+                    <Button className={buttonStyle}>
+                      {item.icon}
+                      <p className={paragraphStyle}>
+                        {item.name}
+                      </p>
+                    </Button>
+                  </li>
+                ))}
+                
                 
               </ul>
           
