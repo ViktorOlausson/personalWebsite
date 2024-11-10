@@ -1,8 +1,11 @@
 import React from 'react'
+import Button from '.././components/Button'
+
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className='flex'>Home
+    </div>
   )
 }
 
