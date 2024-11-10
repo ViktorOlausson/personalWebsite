@@ -1,11 +1,12 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import Container from '../Container/Container'
 import "../../index.css"
 import Button from '../Button'
 import { BeakerIcon, HomeIcon, BriefcaseIcon, InformationCircleIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 
 const iconSize = "size-6"
-const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color"
+const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color px-3"
 const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
@@ -19,6 +20,7 @@ const navItems = [
 ]
 
 function Header() {
+  const navigate = useNavigate()
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex'>
       {/* border frame: border-2 border-border-gray */}
@@ -64,7 +66,7 @@ function Header() {
 
                 {navItems.map((item) => (
                   <li className={liStyle} key={item.name} padding={buttonPadding}>
-                    <Button className={buttonStyle}>
+                    <Button className={buttonStyle} padding={buttonPadding} onClick={() => navigate(item.slug)}>
                       {item.icon}
                       <p className={paragraphStyle}>
                         {item.name}
