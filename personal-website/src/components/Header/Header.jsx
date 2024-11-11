@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Container from '../Container/Container'
 import "../../index.css"
@@ -10,6 +10,7 @@ const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color
 const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
+const buttonColor = ""
 
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
@@ -21,6 +22,7 @@ const navItems = [
 
 function Header() {
   const navigate = useNavigate()
+  const [hidden, setHidden] = useState()
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex'>
       {/* border frame: border-2 border-border-gray */}
@@ -33,47 +35,51 @@ function Header() {
           </div>
           {/* Ändra färger på knappar?? */}
               <ul className='flex ml-auto'>
-                {/* <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding}>
+                <li className='mx-2'>
+                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <HomeIcon className="size-5"/>
                       <p className={paragraphStyle}>Home</p>
                   </Button>
                 </li>
                 <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding}>
+                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       {navItems[1].icon}
                       <p className={paragraphStyle}>Projects</p>
                   </Button>
                 </li>
                 <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding}>
+                  <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => setHidden(false)} onMouseLeave={() => setHidden(true)}>
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
                   </Button>
+                  {hidden ? null : 
+                  <div className='absolute bg-dropdown-bg'>
+                    This is test dropdown!!
+                  </div>}
                 </li>
                 <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding}>
+                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <InformationCircleIcon className="size-5"/>
                       <p className={paragraphStyle}>About Me</p>
                   </Button>
                 </li>
                 <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding}>
+                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <EnvelopeIcon className="size-5"/>
                       <p className={paragraphStyle}>Contact</p>
                   </Button>
-                </li> */}
+                </li> 
 
-                {navItems.map((item) => (
+                {/* {navItems.map((item) => (
                   <li className={liStyle} key={item.name} padding={buttonPadding}>
-                    <Button className={buttonStyle} padding={buttonPadding} onClick={() => navigate(item.slug)}>
+                    <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onClick={() => navigate(item.slug)}>
                       {item.icon}
                       <p className={paragraphStyle}>
                         {item.name}
                       </p>
                     </Button>
                   </li>
-                ))}
+                ))}*/}
                 
                 
               </ul>
