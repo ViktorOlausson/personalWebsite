@@ -11,6 +11,7 @@ const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
 const buttonColor = ""
+const heighActive = "max-h-2"
 
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
@@ -52,10 +53,11 @@ function Header() {
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
                   </Button>
-                  {hidden ? null : 
+                  {hidden ? null :
                   <div className='absolute bg-dropdown-bg'>
                     This is test dropdown!!
-                  </div>}
+                  </div>
+                  }
                 </li>
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
