@@ -54,8 +54,12 @@ function Header() {
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
                   </Button>
-                  {hidden ? null :
-                  <div className='absolute bg-dropdown-bg'>
+
+                  {/* fungerar som dropdown transition */}
+                  {hidden ? <div className='absolute bg-orange-800 max-h-0'>
+                    This is test dropdown!!
+                  </div> :
+                  <div className='absolute bg-dropdown-bg max-h-10 transition-all'>
                     This is test dropdown!!
                   </div>
                   }
