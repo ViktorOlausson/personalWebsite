@@ -23,7 +23,8 @@ const navItems = [
 
 function Header() {
   const navigate = useNavigate()
-  const [hidden, setHidden] = useState()
+  const [hidden, setHidden] = useState(true)
+  //setHidden(false) 
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex'>
       {/* border frame: border-2 border-border-gray */}
