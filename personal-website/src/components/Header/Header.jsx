@@ -13,7 +13,7 @@ const liStyle = "mx-2"
 const buttonColor = ""
 const heighActive = "max-h-10"
 const heighUnActive = "max-h-0"
-const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-1000"
+const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-500"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
 const dropdownActive = `${heighActive} ${dropdownStyle}`
 
@@ -41,18 +41,21 @@ function Header() {
           </div>
           {/* Ändra färger på knappar?? */}
               <ul className='flex ml-auto'>
+
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <HomeIcon className="size-5"/>
                       <p className={paragraphStyle}>Home</p>
                   </Button>
                 </li>
+
                 <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
+                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor} >
                       {navItems[1].icon}
                       <p className={paragraphStyle}>Projects</p>
                   </Button>
                 </li>
+                
                 <li className='mx-2'>
                   <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => 
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
@@ -70,33 +73,15 @@ function Header() {
                       </div>
                     </div>
                   </div>
-
-                  {/* {hidden ? 
-                  
-                  <div className={`${dropdownUnActive}`}>
-                    <div className='flex flex-col'>
-                      This is test dropdown!!
-                      <div>
-                        test 123
-                      </div>
-                    </div>
-                  </div> :
-                  <div className={`${dropdownActive}`}>
-                    <div className='flex flex-col'>
-                      This is test dropdown!!
-                      <div>
-                        test 123
-                      </div>
-                    </div>
-                  </div>
-                  } */}
                 </li>
+
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <InformationCircleIcon className="size-5"/>
                       <p className={paragraphStyle}>About Me</p>
                   </Button>
                 </li>
+
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <EnvelopeIcon className="size-5"/>
@@ -113,7 +98,7 @@ function Header() {
                       </p>
                     </Button>
                   </li>
-                ))}*/}
+                ))} */}
                 
                 
               </ul>
