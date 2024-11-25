@@ -11,7 +11,11 @@ const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
 const buttonColor = ""
-const heighActive = "max-h-2"
+const heighActive = "max-h-10"
+const heighUnActive = "max-h-0"
+const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-1000"
+const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
+const dropdownActive = `${heighActive} ${dropdownStyle}`
 
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
@@ -50,19 +54,42 @@ function Header() {
                   </Button>
                 </li>
                 <li className='mx-2'>
-                  <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => setHidden(false)} onMouseLeave={() => setHidden(true)}>
+                  <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => 
+                    setHidden(false)} onMouseLeave={() => setHidden(true)}>
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
                   </Button>
 
                   {/* fungerar som dropdown transition */}
-                  {hidden ? <div className='absolute bg-orange-800 max-h-0'>
-                    This is test dropdown!!
-                  </div> :
-                  <div className='absolute bg-dropdown-bg max-h-10 transition-all'>
-                    This is test dropdown!!
+
+                  <div className={`${hidden ? dropdownUnActive : dropdownActive}`}>
+                    <div className='flex flex-col'>
+                      This is test dropdown!!
+                      <div>
+                        test 123
+                      </div>
+                    </div>
                   </div>
-                  }
+
+                  {/* {hidden ? 
+                  
+                  <div className={`${dropdownUnActive}`}>
+                    <div className='flex flex-col'>
+                      This is test dropdown!!
+                      <div>
+                        test 123
+                      </div>
+                    </div>
+                  </div> :
+                  <div className={`${dropdownActive}`}>
+                    <div className='flex flex-col'>
+                      This is test dropdown!!
+                      <div>
+                        test 123
+                      </div>
+                    </div>
+                  </div>
+                  } */}
                 </li>
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
