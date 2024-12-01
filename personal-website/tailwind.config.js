@@ -16,6 +16,9 @@ export default {
       maxWidth: {
         '8xl': '96rem',
         '9xl': '104rem'
+      },
+      transitionDuration: {
+        '400': '400ms',
       }
     },
   },

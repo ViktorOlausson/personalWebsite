@@ -11,9 +11,9 @@ const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
 const buttonColor = ""
-const heighActive = "max-h-10"
+const heighActive = "max-h-32"
 const heighUnActive = "max-h-0"
-const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-500"
+const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-300"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
 const dropdownActive = `${heighActive} ${dropdownStyle}`
 
@@ -65,13 +65,25 @@ function Header() {
 
                   {/* fungerar som dropdown transition */}
 
-                  <div className={`${hidden ? dropdownUnActive : dropdownActive}`}>
-                    <div className='flex flex-col'>
-                      This is test dropdown!!
-                      <div>
-                        test 123
-                      </div>
-                    </div>
+                  <div className={`${hidden ? dropdownUnActive : dropdownActive}`} onMouseEnter={() => 
+                    setHidden(false)} onMouseLeave={() => setHidden(true)}>
+                    <ul className='flex flex-col py-2 justify-center'>
+                      <li className='my-1'>
+                        <Button className={`${buttonStyle} w-full`} padding={buttonPadding} bgColor={buttonColor}>
+                          <p className={paragraphStyle}>Education</p>
+                        </Button>
+                      </li>
+                      <li className='my-1'>
+                        <Button className={`${buttonStyle} w-full`} padding={buttonPadding} bgColor={buttonColor}>
+                          <p className={paragraphStyle}>Work Experience</p>
+                        </Button>
+                      </li>
+                      <li className='my-1'>
+                        <Button className={`${buttonStyle} w-full`} padding={buttonPadding} bgColor={buttonColor}>
+                          <p className={paragraphStyle}>Knowledge</p>
+                        </Button>
+                      </li>
+                    </ul>
                   </div>
                 </li>
 
