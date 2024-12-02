@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Container from '../Container/Container'
 import "../../index.css"
 import Button from '../Button'
-import { BeakerIcon, HomeIcon, BriefcaseIcon, InformationCircleIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+import { BeakerIcon, HomeIcon, BriefcaseIcon, InformationCircleIcon, EnvelopeIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 
 const iconSize = "size-6"
 const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color px-3"
@@ -16,6 +16,8 @@ const heighUnActive = "max-h-0"
 const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-300"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
 const dropdownActive = `${heighActive} ${dropdownStyle}`
+const arrowHidden = "size-5"
+const arrowShow = "size-5 -rotate-90"
 
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
@@ -61,30 +63,32 @@ function Header() {
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
+                      <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} transition-all duration-300 bold`}/>
                   </Button>
-
+                    
                   {/* fungerar som dropdown transition */}
 
                   <div className={`${hidden ? dropdownUnActive : dropdownActive}`} onMouseEnter={() => 
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
                     <ul className='flex flex-col py-2 justify-center'>
                       <li className='my-1'>
-                        <Button className={`${buttonStyle} w-full`} padding={buttonPadding} bgColor={buttonColor}>
+                        <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor}>
                           <p className={paragraphStyle}>Education</p>
                         </Button>
                       </li>
                       <li className='my-1'>
-                        <Button className={`${buttonStyle} w-full`} padding={buttonPadding} bgColor={buttonColor}>
+                        <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor}>
                           <p className={paragraphStyle}>Work Experience</p>
                         </Button>
                       </li>
                       <li className='my-1'>
-                        <Button className={`${buttonStyle} w-full`} padding={buttonPadding} bgColor={buttonColor}>
+                        <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor}>
                           <p className={paragraphStyle}>Knowledge</p>
                         </Button>
                       </li>
                     </ul>
                   </div>
+                  
                 </li>
 
                 <li className='mx-2'>
