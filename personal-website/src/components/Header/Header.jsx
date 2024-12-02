@@ -16,8 +16,8 @@ const heighUnActive = "max-h-0"
 const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-300"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
 const dropdownActive = `${heighActive} ${dropdownStyle}`
-const arrowHidden = "size-5"
-const arrowShow = "size-5 -rotate-90"
+const arrowHidden = ""
+const arrowShow = "-rotate-90"
 
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
@@ -63,7 +63,8 @@ function Header() {
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
                       <BriefcaseIcon className="size-5"/>
                       <p className='mx-1.5 font-semibold'>Experience</p>
-                      <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} transition-all duration-300 bold`}/>
+                      <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} size-5 stroke-2 transition-all duration-300 `}/>
+
                   </Button>
                     
                   {/* fungerar som dropdown transition */}

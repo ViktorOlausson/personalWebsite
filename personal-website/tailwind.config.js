@@ -19,6 +19,9 @@ export default {
       },
       transitionDuration: {
         '400': '400ms',
+      },
+      strokeWidth: {
+        '6': '6px',
       }
     },
   },
