@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Container from '../Container/Container'
 import "../../index.css"
 import Button from '../Button'
@@ -29,6 +29,8 @@ const navItems = [
 
 function Header() {
   const navigate = useNavigate()
+  const location = useLocation()
+  const currentPath = location.pathname
   const [hidden, setHidden] = useState(true)
   const [activeMenu, setActiveMenu] = useState(null)
 
@@ -44,10 +46,10 @@ function Header() {
   //   //   }
   // }
 
-  const handelClickMenu = (id, slug) => {
-    setActiveMenu(id)
-     navigate(slug)
-  }
+  // const handelClickMenu = (id, slug) => {
+  //   setActiveMenu(id)
+  //   navigate(slug)
+  // }
   //setHidden(false) 
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex'>
@@ -135,8 +137,8 @@ function Header() {
 
                 {navItems.map((item) => (
                   <li className={liStyle} key={item.name} padding={buttonPadding}>
-                    <Button className={`${buttonStyle}  ${activeMenu === item.index ? "active" : ""}`} bgColor={buttonColor}
-                     padding={buttonPadding} onClick={() => handelClickMenu(item.index, item.slug)}>
+                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor}
+                     padding={buttonPadding} onClick={() => navigate(item.slug)}>
                       {item.icon}
                       <p className={paragraphStyle}>
                         {item.name}
