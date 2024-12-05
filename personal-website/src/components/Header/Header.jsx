@@ -20,16 +20,34 @@ const arrowHidden = ""
 const arrowShow = "-rotate-90"
 
 const navItems = [
-  {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
-  {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
-  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>, dropdownItems:[{}]},
-  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>},
-  {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>},
+  {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>,  index: 1},
+  {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>,  index: 2},
+  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>,  index: 3, dropdownItems:[{}]},
+  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>,  index: 4},
+  {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>,  index: 5},
 ]
 
 function Header() {
   const navigate = useNavigate()
   const [hidden, setHidden] = useState(true)
+  const [activeMenu, setActiveMenu] = useState(null)
+
+  // const _toggleMenu = (id) => {
+  //   setActiveMenu((prevActiveMenus) => ({
+  //    ...prevActiveMenus,
+  //     [id]:!prevActiveMenus[id],
+  //   }))
+  //   // if (id === activeMenu) {
+  //   //     setActiveMenu(null)
+  //   //   } else {
+  //   //     setActiveMenu(id)
+  //   //   }
+  // }
+
+  const handelClickMenu = (id, slug) => {
+    setActiveMenu(id)
+     navigate(slug)
+  }
   //setHidden(false) 
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex'>
@@ -44,7 +62,7 @@ function Header() {
           {/* Ändra färger på knappar?? */}
               <ul className='flex ml-auto'>
 
-                <li className='mx-2'>
+                {/* <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
                       <HomeIcon className="size-5"/>
                       <p className={paragraphStyle}>Home</p>
@@ -66,8 +84,6 @@ function Header() {
                       <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} size-5 stroke-2 transition-all duration-300 `}/>
 
                   </Button>
-                    
-                  {/* fungerar som dropdown transition */}
 
                   <div className={`${hidden ? dropdownUnActive : dropdownActive}`} onMouseEnter={() => 
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
@@ -90,7 +106,7 @@ function Header() {
                     </ul>
                   </div>
                   
-                </li>
+                </li> 
 
                 <li className='mx-2'>
                   <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
@@ -104,7 +120,7 @@ function Header() {
                       <EnvelopeIcon className="size-5"/>
                       <p className={paragraphStyle}>Contact</p>
                   </Button>
-                </li> 
+                </li> */}
 
                 {/* {navItems.map((item) => (
                   <li className={liStyle} key={item.name} padding={buttonPadding}>
@@ -116,6 +132,18 @@ function Header() {
                     </Button>
                   </li>
                 ))} */}
+
+                {navItems.map((item) => (
+                  <li className={liStyle} key={item.name} padding={buttonPadding}>
+                    <Button className={`${buttonStyle}  ${activeMenu === item.index ? "active" : ""}`} bgColor={buttonColor}
+                     padding={buttonPadding} onClick={() => handelClickMenu(item.index, item.slug)}>
+                      {item.icon}
+                      <p className={paragraphStyle}>
+                        {item.name}
+                      </p>
+                    </Button>
+                  </li>
+                ))}
                 
                 
               </ul>
@@ -123,6 +151,7 @@ function Header() {
         </nav>
       </Container>
     </header>
+
   )
 }
 
