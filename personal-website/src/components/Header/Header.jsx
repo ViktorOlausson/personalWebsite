@@ -27,6 +27,8 @@ const navItems = [
   {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>,  index: 5},
 ]
 
+//{name: "Education", slug: "/"},{name: "Education", slug: "/"}, {name: "Education", slug: "/"}
+
 function Header() {
   const navigate = useNavigate()
   const location = useLocation()
