@@ -20,11 +20,12 @@ const arrowHidden = ""
 const arrowShow = "-rotate-90"
 
 const navItems = [
-  {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>,  index: 1},
-  {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>,  index: 2},
-  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>,  index: 3, dropdownItems:[{}]},
-  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>,  index: 4},
-  {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>,  index: 5},
+  {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
+  {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
+  {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>, dropdownItems:[
+    {name: "Education", slug: "/"},{name: "Work", slug: "/"}, {name: "Knowladge", slug: "/"}]},
+  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/> },
+  {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>},
 ]
 
 //{name: "Education", slug: "/"},{name: "Education", slug: "/"}, {name: "Education", slug: "/"}
@@ -66,89 +67,36 @@ function Header() {
           {/* Ändra färger på knappar?? */}
               <ul className='flex ml-auto'>
 
-                {/* <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
-                      <HomeIcon className="size-5"/>
-                      <p className={paragraphStyle}>Home</p>
-                  </Button>
-                </li>
-
-                <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor} >
-                      {navItems[1].icon}
-                      <p className={paragraphStyle}>Projects</p>
-                  </Button>
-                </li>
-                
-                <li className='mx-2'>
-                  <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => 
-                    setHidden(false)} onMouseLeave={() => setHidden(true)}>
-                      <BriefcaseIcon className="size-5"/>
-                      <p className='mx-1.5 font-semibold'>Experience</p>
+                {navItems.map((item) => item.dropdownItems ? (
+                  <li className='mx-2' key={item.name}>
+                    <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => 
+                    setHidden(false)} onMouseLeave={() => setHidden(true)} onClick={() => navigate(item.slug)}>
+                      {item.icon}
+                      <p className='mx-1.5 font-semibold'>{item.name}</p>
                       <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} size-5 stroke-2 transition-all duration-300 `}/>
-
-                  </Button>
-
-                  <div className={`${hidden ? dropdownUnActive : dropdownActive}`} onMouseEnter={() => 
+                    </Button>
+                    <div className={`${hidden ? dropdownUnActive : dropdownActive}`} onMouseEnter={() => 
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
-                    <ul className='flex flex-col py-2 justify-center'>
-                      <li className='my-1'>
-                        <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor}>
-                          <p className={paragraphStyle}>Education</p>
-                        </Button>
-                      </li>
-                      <li className='my-1'>
-                        <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor}>
-                          <p className={paragraphStyle}>Work Experience</p>
-                        </Button>
-                      </li>
-                      <li className='my-1'>
-                        <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor}>
-                          <p className={paragraphStyle}>Knowledge</p>
-                        </Button>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                </li> 
-
-                <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
-                      <InformationCircleIcon className="size-5"/>
-                      <p className={paragraphStyle}>About Me</p>
-                  </Button>
-                </li>
-
-                <li className='mx-2'>
-                  <Button className={buttonStyle} padding={buttonPadding} bgColor={buttonColor}>
-                      <EnvelopeIcon className="size-5"/>
-                      <p className={paragraphStyle}>Contact</p>
-                  </Button>
-                </li> */}
-
-                {/* {navItems.map((item) => (
-                  <li className={liStyle} key={item.name} padding={buttonPadding}>
+                      <ul className='flex flex-col py-2 justify-center'>
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <li className='my-1' key={dropdownItem.name}>
+                            <Button className={`${buttonStyle} w-full h-8`} padding={buttonPadding} bgColor={buttonColor} onClick={() => navigate(dropdownItem.slug)}>
+                              <p className={paragraphStyle}>{dropdownItem.name}</p>
+                            </Button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ) : (
+                  <li className='mx-2' key={item.name}>
                     <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onClick={() => navigate(item.slug)}>
                       {item.icon}
-                      <p className={paragraphStyle}>
-                        {item.name}
-                      </p>
-                    </Button>
-                  </li>
-                ))} */}
-
-                {navItems.map((item) => (
-                  <li className={liStyle} key={item.name} padding={buttonPadding}>
-                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor}
-                     padding={buttonPadding} onClick={() => navigate(item.slug)}>
-                      {item.icon}
-                      <p className={paragraphStyle}>
-                        {item.name}
-                      </p>
+                      <p className='mx-1.5 font-semibold'>{item.name}</p>
                     </Button>
                   </li>
                 ))}
-                
+
                 
               </ul>
           
