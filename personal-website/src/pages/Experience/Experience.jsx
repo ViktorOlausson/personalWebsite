@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Experince() {
+function Experience() {
   return (
-    <div>Experince</div>
+    <div className='bg-orange-600'>Experience</div>
   )
 }
 
-export default Experince
+export default Experience

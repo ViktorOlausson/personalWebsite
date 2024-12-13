@@ -8,7 +8,7 @@ import { HomeIcon, BeakerIcon, BriefcaseIcon, InformationCircleIcon } from "@her
 import {ChevronLeftIcon} from "@heroicons/react/solid"
 
 const iconSize = "size-6"
-const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color px-3 bg-green-600"
+const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color px-3"
 const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
@@ -25,7 +25,7 @@ const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
   {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
   {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>, dropdownItems:[
-    {name: "Education", slug: "/"},{name: "Work", slug: "/"}, {name: "Knowledge", slug: "/"}]},
+    {name: "Education", slug: "/experience/education"},{name: "Work", slug: "/experience/work"}, {name: "Knowledge", slug: "/experience/knowledge"}]},
   {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>},
   {name: "Contact", slug: "/contact", icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
