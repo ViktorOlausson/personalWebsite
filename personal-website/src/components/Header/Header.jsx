@@ -23,8 +23,8 @@ const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
   {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
   {name: "Experience", slug: "/experience", icon: <BriefcaseIcon className={iconSize}/>, dropdownItems:[
-    {name: "Education", slug: "/"},{name: "Work", slug: "/"}, {name: "Knowladge", slug: "/"}]},
-  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/> },
+    {name: "Education", slug: "/"},{name: "Education", slug: "/"}, {name: "Education", slug: "/"}]},
+  {name: "About Me", slug: "/about-me", icon: <InformationCircleIcon className={iconSize}/>},
   {name: "Contact", slug: "/contact", icon: <EnvelopeIcon className={iconSize}/>},
 ]
 
@@ -69,8 +69,8 @@ function Header() {
 
                 {navItems.map((item) => item.dropdownItems ? (
                   <li className='mx-2' key={item.name}>
-                    <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onMouseEnter={() => 
-                    setHidden(false)} onMouseLeave={() => setHidden(true)} onClick={() => navigate(item.slug)}>
+                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor} padding={buttonPadding} 
+                    onMouseEnter={() => setHidden(false)} onMouseLeave={() => setHidden(true)} onClick={() => navigate(item.slug)} >
                       {item.icon}
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
                       <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} size-5 stroke-2 transition-all duration-300 `}/>
@@ -90,13 +90,13 @@ function Header() {
                   </li>
                 ) : (
                   <li className='mx-2' key={item.name}>
-                    <Button className={buttonStyle} bgColor={buttonColor} padding={buttonPadding} onClick={() => navigate(item.slug)}>
+                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor} padding={buttonPadding} 
+                    onClick={() => navigate(item.slug)}>
                       {item.icon}
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
                     </Button>
                   </li>
                 ))}
-
                 
               </ul>
           
