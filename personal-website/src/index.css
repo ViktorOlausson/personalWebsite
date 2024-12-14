@@ -76,14 +76,6 @@ textarea:focus, input:focus{
   outline: none;
 }
 
-/* button:hover{
-cursor: pointer;
-} */
-
-.buttonColor:hover{
-background-color: #2f2b3a;
-}
-
 .active{
-  background-color: pink;
+  background-color: #705094;
 }

@@ -9,12 +9,12 @@ import Brain from '../icons/Brain';
 import Envolope from '../icons/Envolope';
 
 const iconSize = "size-6"
-const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color px-3"
+const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color"
 const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
 const buttonColor = ""
-const heighActive = "max-h-44"
+const heighActive = "max-h-52"
 const heighUnActive = "max-h-0"
 const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-300"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
@@ -50,7 +50,7 @@ function Header() {
 
                 {navItems.map((item) => item.dropdownItems ? (
                   <li className='mx-1.5' key={item.name}>
-                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "bg-button-color" : ""}`} bgColor={buttonColor} padding="px-0 pr-1 pl-3"
+                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor} padding="px-0 pr-1 pl-3"
                     onMouseEnter={() => setHidden(false)} onMouseLeave={() => setHidden(true)} onClick={() => navigate(item.slug)} >
                       {item.icon}
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
@@ -61,7 +61,7 @@ function Header() {
                       <ul className='flex flex-col py-2 justify-center'>
                         {item.dropdownItems.map((dropdownItem) => (
                           <li className='my-1.5' key={dropdownItem.name}>
-                            <Button className={`${buttonStyle} ${currentPath === dropdownItem.slug ? "bg-button-color" : ""} w-full h-10`} padding={buttonPadding} bgColor={buttonColor}
+                            <Button className={`${buttonStyle} ${currentPath === dropdownItem.slug ? "active" : ""} w-full py-3`} padding={buttonPadding} bgColor={buttonColor}
                             onClick={() => navigate(dropdownItem.slug)}>
                               {dropdownItem.icon}
                               <p className={paragraphStyle}>{dropdownItem.name}</p>
@@ -73,7 +73,7 @@ function Header() {
                   </li>
                 ) : (
                   <li className='mx-1.5' key={item.name}>
-                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "bg-button-color" : ""}`} bgColor={buttonColor} padding={buttonPadding} 
+                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor} padding={buttonPadding} 
                     onClick={() => navigate(item.slug)}>
                       {item.icon}
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
