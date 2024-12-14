@@ -40,7 +40,7 @@ function Header() {
   const [hidden, setHidden] = useState(true)
   const [activeMenu, setActiveMenu] = useState(null)
   return (
-    <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex'>
+    <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex overflow-hidden'>
       {/* border frame: border-2 border-border-gray */}
       <Container className='place-content-center h-full ' maxWidth='max-w-9xl' paddingX=''>
         <nav className='flex h-full align-middle'>
