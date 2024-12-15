@@ -1,11 +1,17 @@
 import React from 'react'
 import Button from '.././components/Button'
 import portrait from "../pictuers/portrait-noBackround.png"
+import { useNavigate } from 'react-router-dom'
+import TwitterX from '../components/icons/TwitterX'
 
-let containerStyle = "flex flex-row items-center justify-center mb-12 bg-blue-500"
-let partDivStyle = "flex flex-col items-center justify-center"
-let headingStyle = "textLight text-3xl font-bold"
-let textStyle = "textLight font-semibold text-xl"
+const containerStyle = "flex flex-row items-center justify-center mb-12 bg-blue-500 mx-auto"
+const partDivStyle = "flex flex-col items-center justify-center text-center"
+const headingStyle = "textLight text-3xl font-bold text-center"
+const textStyle = "textLight font-semibold text-xl text-center"
+const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl text-primary hover:bg-[#705094]"
+const buttonPadding = "py-6 px-11"
+const ankarStyle = "no-underline px-0 py-0 bg-red-700 mx-4"
+const iconStyle = "bg-green-700 fill-button-color hover:fill-[#705094] duration-300 h-12 w-12"
 
 let title = 'Student Software Developer'
 let company = 'Mölk vocational school'
@@ -15,14 +21,16 @@ let occupation = title +' with '+company
 let age = "22"
 
 function Home() {
+  const navigate = useNavigate()
   return (
     <>
       <div className={`${containerStyle}`}> {/* heading container */}
         <div className={`${partDivStyle} p-[10px]`}>
 
-          <h2 className='textLight font-bold text-2xl'>Hello, My Name Is</h2>
-          <h1 className='text-[45px] textHeading font-bold'>Viktor Olausson</h1>
-          <h3 className='flex items-center justify-center font-bold text-lg'><span className='textLight'>And I'm a<span className='textPrime'> {title}</span></span></h3>
+          <h2 className='text-light font-bold text-2xl'>Hello, My Name Is</h2>
+          <h1 className='text-[45px] text-heading font-bold'>Viktor Olausson</h1>
+          <h3 className='flex items-center justify-center font-bold text-lg'><span className='text-light'>And I'm a<span className='text-text-primary'> {title}
+            </span></span></h3>
 
         </div>
 
@@ -31,7 +39,7 @@ function Home() {
         </div>
       </div>
 
-      <div className={`${containerStyle}`}> {/* short info container */}
+      <div className={`${containerStyle} flex-col`}> {/* short info container */}
         <div className={`${partDivStyle}`}>
           <h1 className={`${headingStyle}`}>Short about me</h1>
           <h3 className='textLight font-semibold text-xl'>
@@ -51,6 +59,46 @@ function Home() {
           <h2 className={`${textStyle} underline`}>
           To read more about me and my experience please press the button below
           </h2>
+        </div>
+        <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/about-me")}>About Me</Button>
+      </div>
+
+      <div className={`${containerStyle} flex-col`}> {/* short info container */}
+        <div className={`${partDivStyle}`}>
+          <h1 className={`${headingStyle}`}>Projects</h1>
+          <h3 className={`${textStyle}`}>
+          I'm always trying to expand my knowledge and learn more, therefore am I trying to find new and exciting projects to do 
+          </h3>
+          <h3 className={`${textStyle}`}>
+          I'm however a busy person and do not always have alot of time, 
+          but I have done some projects both in my free time and during my studies
+          </h3>
+          <h2 className={`${textStyle} underline`}>
+          To read more about me and my experience please press the button below
+          </h2>
+        </div>
+        <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/projects")}>Projects</Button>
+      </div>
+
+      <div className={`${containerStyle} flex-col mb-0`}> {/* short info container */}
+        <div className={`${partDivStyle}`}>
+          <h1 className={`${headingStyle}`}>Contact Me</h1>
+          <h3 className={`${textStyle}`}>
+          The easiest way to contact me is by email
+          </h3>
+          <h3 className={`${textStyle}`}>
+          If you want to follow me on any social media can you also find that by clicking the button bellow
+          </h3>
+          <h2 className={`${textStyle} underline`}>
+          To find my contact details please press the button below
+          </h2>
+        </div>
+        <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/contact")}>Projects</Button>
+        <div className='flex flex-row justify-between mt-4'>
+          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
         </div>
       </div>
     </>

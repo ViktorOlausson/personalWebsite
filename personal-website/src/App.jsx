@@ -7,10 +7,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='min-h-dvh flex flex-wrap al bg-primary'>
+    <div className='min-h-dvh flex flex-wrap bg-primary'>
       <div className='w-full'>
         <Header/>
-        <main className='flex max-h-[96.5dvh] overflow-hidden justify-center pt-0.5 bg-orange-700 flex-col'> {/* body */}
+        <main className='flex flex-col max-h-[96.5dvh] overflow-hidden justify-center pt-0.5 bg-orange-700'> {/* body */}
           <Outlet/>
         </main>
       </div>
