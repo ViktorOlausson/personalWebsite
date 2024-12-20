@@ -10,7 +10,7 @@ const headingStyle = "textLight text-3xl font-bold text-center"
 const textStyle = "textLight font-semibold text-xl text-center"
 const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl text-primary hover:bg-[#705094]"
 const buttonPadding = "py-6 px-11"
-const ankarStyle = "no-underline px-0 py-0 bg-red-700 mx-4"
+const anchorStyle = "no-underline px-0 py-0 bg-red-700 mx-4"
 const iconStyle = "bg-green-700 fill-button-color hover:fill-[#705094] duration-300 h-12 w-12"
 
 let title = 'Student Software Developer'
@@ -95,10 +95,10 @@ function Home() {
         </div>
         <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/contact")}>Projects</Button>
         <div className='flex flex-row justify-between mt-4'>
-          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${ankarStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
         </div>
       </div>
     </>
