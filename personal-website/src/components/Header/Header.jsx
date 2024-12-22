@@ -9,7 +9,7 @@ import Brain from '../icons/Brain';
 import Envolope from '../icons/Envolope';
 
 const iconSize = "size-6"
-const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color"
+const buttonStyle = "h-full flex items-center duration-200 hover:bg-button-color hover:text-black"
 const buttonPadding = "px-3"
 const paragraphStyle = "mx-1.5 font-semibold"
 const liStyle = "mx-2"
@@ -54,7 +54,7 @@ function Header() {
                     onMouseEnter={() => setHidden(false)} onMouseLeave={() => setHidden(true)} onClick={() => navigate(item.slug)} >
                       {item.icon}
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
-                      <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} transition-all duration-300 size-8 px-0`} strokeWidth={2}/>
+                      <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} transition-all duration-300 size-8 px-0 text-white`} strokeWidth={2}/>
                     </Button>
                     <div className={`${hidden ? dropdownUnActive : dropdownActive} w-48`} onMouseEnter={() => 
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>

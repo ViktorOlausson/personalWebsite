@@ -2,16 +2,16 @@ import React from 'react'
 import Button from '.././components/Button'
 import portrait from "../pictuers/portrait-noBackround.png"
 import { useNavigate } from 'react-router-dom'
-import TwitterX from '../components/icons/TwitterX'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faGithub, faInstagram, faLinkedin, faTwitter, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
-const containerStyle = "flex flex-row items-center justify-center mb-12 bg-blue-500 mx-auto"
+const containerStyle = "flex flex-row items-center justify-center mb-12 mx-auto"
 const partDivStyle = "flex flex-col items-center justify-center text-center"
 const headingStyle = "textLight text-3xl font-bold text-center"
 const textStyle = "textLight font-semibold text-xl text-center"
-const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl text-primary hover:bg-[#705094]"
+const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl text-black hover:bg-[#705094]"
 const buttonPadding = "py-6 px-11"
-const anchorStyle = "no-underline px-0 py-0 bg-red-700 mx-4"
-const iconStyle = "bg-green-700 fill-button-color hover:fill-[#705094] duration-300 h-12 w-12"
+const anchorStyle = "no-underline px-0 py-0 mx-8 text-6xl text-button-color duration-300 hover:text-[#705094]"
 
 let title = 'Student Software Developer'
 let company = 'Mölk vocational school'
@@ -94,11 +94,17 @@ function Home() {
           </h2>
         </div>
         <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/contact")}>Projects</Button>
-        <div className='flex flex-row justify-between mt-4'>
+        <div className='flex flex-row justify-between mt-4 '>
+
+          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faXTwitter}/></a>
+          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faInstagram}/></a>
+          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faLinkedin}/></a>
+          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faGithub}/></a>
+
+          {/* <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle} bg-orange-600`}/></a>
+          <a href="" className={`${anchorStyle}`}><Instagram width='' height='' classNames={`${iconStyle} bg-orange-600`}/></a>
           <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
+          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a> */}
         </div>
       </div>
     </>
