@@ -9,7 +9,7 @@ const containerStyle = "flex flex-row items-center justify-center mb-12 mx-auto"
 const partDivStyle = "flex flex-col items-center justify-center text-center"
 const headingStyle = "textLight text-3xl font-bold text-center"
 const textStyle = "textLight font-semibold text-xl text-center"
-const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl text-black hover:bg-[#705094]"
+const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl  hover:bg-[#705094]"
 const buttonPadding = "py-6 px-11"
 const anchorStyle = "no-underline px-0 py-0 mx-8 text-6xl text-button-color duration-300 hover:text-[#705094]"
 
@@ -60,7 +60,7 @@ function Home() {
           To read more about me and my experience please press the button below
           </h2>
         </div>
-        <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/about-me")}>About Me</Button>
+        <Button className={`${buttonStyle} text-black`} padding={buttonPadding} onClick={() => navigate("/about-me")}>About Me</Button>
       </div>
 
       <div className={`${containerStyle} flex-col`}> {/* short info container */}
