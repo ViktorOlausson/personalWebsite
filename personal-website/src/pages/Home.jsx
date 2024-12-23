@@ -60,7 +60,7 @@ function Home() {
           To read more about me and my experience please press the button below
           </h2>
         </div>
-        <Button className={`${buttonStyle} text-black`} padding={buttonPadding} onClick={() => navigate("/about-me")}>About Me</Button>
+        <Button className={`${buttonStyle} `} padding={buttonPadding} onClick={() => navigate("/about-me")}>About Me</Button>
       </div>
 
       <div className={`${containerStyle} flex-col`}> {/* short info container */}
@@ -96,15 +96,22 @@ function Home() {
         <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/contact")}>Projects</Button>
         <div className='flex flex-row justify-between mt-4 '>
 
-          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faXTwitter}/></a>
-          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faInstagram}/></a>
-          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faLinkedin}/></a>
-          <a href="" className={`${anchorStyle}`}><FontAwesomeIcon icon={faGithub}/></a>
+          <a href="https://twitter.com/__viktor__1/" target='blank' className={`${anchorStyle}`}>
+            <FontAwesomeIcon icon={faXTwitter}/>
+          </a>
+          
+          <a href="https://www.instagram.com/viktorolausson_/" target='blank' className={`${anchorStyle}`}>
+            <FontAwesomeIcon icon={faInstagram}/>
+          </a>
 
-          {/* <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle} bg-orange-600`}/></a>
-          <a href="" className={`${anchorStyle}`}><Instagram width='' height='' classNames={`${iconStyle} bg-orange-600`}/></a>
-          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a>
-          <a href="" className={`${anchorStyle}`}><TwitterX width='' height='' classNames={`${iconStyle}`}/></a> */}
+          <a href="https://www.linkedin.com/in/viktor-olausson-283553263/" target='blank' className={`${anchorStyle}`}>
+            <FontAwesomeIcon icon={faLinkedin}/>
+          </a>
+
+          <a href="https://github.com/ViktorOlausson" target='blank' className={`${anchorStyle}`}>
+            <FontAwesomeIcon icon={faGithub}/>
+          </a>
+
         </div>
       </div>
     </>
