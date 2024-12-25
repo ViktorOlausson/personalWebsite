@@ -35,7 +35,7 @@ function Home() {
         </div>
 
         <div className={`${partDivStyle}`}>
-          <img className='rounded-[135px]' src={portrait} alt="" />
+          <img className='rounded-[135px] -z-0' src={portrait} alt="" />
         </div>
       </div>
 
