@@ -10,7 +10,7 @@ function App() {
     <div className='min-h-dvh flex bg-primary'>
       <div className='w-full'>
         <Header/>
-        <main className='flex flex-col justify-center pt-0.5 '> {/* body bg-orange-700*/}
+        <main className='flex flex-col justify-center pt-0.5 min-h-[95%]'> {/* body bg-orange-700*/}
           <Outlet/>
         </main>
       </div>
