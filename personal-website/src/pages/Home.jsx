@@ -11,7 +11,7 @@ const headingStyle = "textLight text-3xl font-bold text-center"
 const textStyle = "textLight font-semibold text-xl text-center"
 const buttonStyle = "h-full flex items-center duration-300 rounded-3xl mt-4 font-bold text-xl  hover:bg-[#705094]"
 const buttonPadding = "py-6 px-11"
-const anchorStyle = "no-underline px-0 py-0 mx-8 text-6xl text-button-color duration-300 hover:text-[#705094]"
+const anchorStyle = "no-underline px-0 py-0 mx-8 text-5xl text-button-color duration-300 hover:text-[#705094]"
 
 let title = 'Student Software Developer'
 let company = 'Mölk vocational school'
