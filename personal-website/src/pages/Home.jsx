@@ -15,8 +15,11 @@ const anchorStyle = "no-underline px-0 py-0 mx-8 text-5xl text-button-color dura
 
 let title = 'Student Software Developer'
 let company = 'Mölk vocational school'
+let title2 = "Assistant Manage"
+let company2 = "Wermdö Taekwondo Förening"
 
-let occupation = title +' with '+company
+let occupation = title +' with '+ company
+let occupation2 = title2 +' with '+ company2
 
 let age = "22"
 
