@@ -13,13 +13,13 @@ function Contact() {
         <div className={`${partDivStyle} my-5 w-[80%]`}>
           <h3 className={`${h3Text}`}>To get in touch regarding development, whether it be collaboration or 
           work opportunity, please use the email bellow</h3>
-          <h2 className={`${h2Email}`}>dev.viktorolausson@gmail.com</h2>
+          <a href="mailto:dev.viktorolausson@gmail.com"><h2 className={`${h2Email}`}>dev.viktorolausson@gmail.com</h2></a>
         </div>
 
         <div className={`${partDivStyle} my-5 w-[80%]`}> 
           <h3 className={`${h3Text}`}>To get in touch regarding training or taekwondo, 
           whether it be advice or regarding personal training, please use the email bellow </h3>
-          <h2 className={`${h2Email}`}>viktor@wermdotkd.se</h2>
+          <a href="mailto:viktor@wermdotkd.se"><h2 className={`${h2Email}`}>viktor@wermdotkd.se</h2></a>
         </div>
       </div>
 
