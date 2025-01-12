@@ -39,10 +39,6 @@ function Header() {
   let currentPath = location.pathname
   const [hidden, setHidden] = useState(true)
 
-  console.log(currentPath)
-
-  console.log(currentPath.includes("experience"))
-
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex sticky top-0 z-50'>
       {/* border frame: border-2 border-border-gray */}
