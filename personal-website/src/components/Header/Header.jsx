@@ -36,9 +36,13 @@ const navItems = [
 function Header() {
   const navigate = useNavigate()
   const location = useLocation()
-  const currentPath = location.pathname
+  let currentPath = location.pathname
   const [hidden, setHidden] = useState(true)
-  const [activeMenu, setActiveMenu] = useState(null)
+
+  console.log(currentPath)
+
+  console.log(currentPath.includes("experience"))
+
   return (
     <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex sticky top-0 z-50'>
       {/* border frame: border-2 border-border-gray */}
@@ -50,7 +54,7 @@ function Header() {
 
                 {navItems.map((item) => item.dropdownItems ? (
                   <li className='mx-1.5' key={item.name}>
-                    <Button className={`${buttonStyle}  ${currentPath === item.slug ? "active" : ""}`} bgColor={buttonColor} padding="px-0 pr-1 pl-3"
+                    <Button className={`${buttonStyle}  ${currentPath === item.slug || currentPath.includes("experience") ? "active" : ""}`} bgColor={buttonColor} padding="px-0 pr-1 pl-3"
                     onMouseEnter={() => setHidden(false)} onMouseLeave={() => setHidden(true)} onClick={() => navigate(item.slug)} >
                       {item.icon}
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
