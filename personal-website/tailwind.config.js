@@ -11,10 +11,11 @@ export default {
         "border-gray": "#282828",
         "button-color": "#a688fa",
         "primary": "#121212",
-        "dropdown-bg": "#282828",
+        "dropdown": "#282828",
         "light":"#a0a0a0",
         "heading":"#cbcbcb",
-        "text-primary": "#a688fa"
+        "text-primary": "#a688fa",
+        "nav-prime": "#3f3f3f"
       },
       maxWidth: {
         '8xl': '96rem',

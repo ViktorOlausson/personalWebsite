@@ -16,7 +16,7 @@ const liStyle = "mx-2"
 const buttonColor = ""
 const heighActive = "max-h-52"
 const heighUnActive = "max-h-0"
-const dropdownStyle = "bg-dropdown-bg absolute overflow-hidden transition-all duration-300"
+const dropdownStyle = "bg-dropdown absolute overflow-hidden transition-all duration-300"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
 const dropdownActive = `${heighActive} ${dropdownStyle}`
 const arrowHidden = ""
@@ -42,7 +42,7 @@ function Header() {
   const [hidden, setHidden] = useState(true)
 
   return (
-    <header className='h-12 shadow-md shadow-box-shadow-gray navBackground place-content-center flex sticky top-0 z-50'>
+    <header className='h-12 shadow-md shadow-box-shadow-gray bg-nav-prime place-content-center flex sticky top-0 z-50'>
       {/* border frame: border-2 border-border-gray */}
       <Container className='place-content-center h-full' maxWidth='max-w-9xl' paddingX=''>
         <nav className='flex h-full align-middle'>
