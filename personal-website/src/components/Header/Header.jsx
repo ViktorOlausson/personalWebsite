@@ -22,6 +22,8 @@ const dropdownActive = `${heighActive} ${dropdownStyle}`
 const arrowHidden = ""
 const arrowShow = "-rotate-90"
 
+//add if currentPath contains experience set active
+
 const navItems = [
   {name: "Home", slug: "/", icon: <HomeIcon className={iconSize}/>},
   {name: "Projects", slug: "/projects", icon: <BeakerIcon className={iconSize}/>},
