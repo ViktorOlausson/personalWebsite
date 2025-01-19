@@ -1,7 +1,22 @@
 {
-    "Work":{"company": "AB",
-    "location": "stad",
-    "title": "titel",
+    "Work":[{"company": "Jabb",
+    "location": "Johanneshov",
+    "title": "Butikssäljare",
     "time": "tid",
-    "description": "förklaring"}
+    "description": "förklaring"},
+    {"company": "AB1",
+    "location": "stad1",
+    "title": "titel1",
+    "time": "tid1",
+    "description": "förklaring1"},
+    {"company": "AB12",
+    "location": "stad12",
+    "title": "titel12",
+    "time": "tid12",
+    "description": "förklaring12"},
+    {"company": "AB13",
+    "location": "stad13",
+    "title": "titel13",
+    "time": "tid13",
+    "description": "förklaring13"}]
 }
