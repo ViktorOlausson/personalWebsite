@@ -9,6 +9,8 @@ function WorkExperience() {
 
   const [active, setActive] = useState([])
 
+  // TODO: move title below company and smaller
+
   return (
     <div className='flex flex-row align-middle justify-center w-full'>
       
