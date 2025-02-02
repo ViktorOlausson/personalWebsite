@@ -7,9 +7,7 @@ import workData from "../../Data/Work.json"
 
 function WorkExperience() {
 
-  const [active, setActive] = useState([])
 
-  // TODO: move title below company and smaller
 
   return (
     <div className='flex flex-row align-middle justify-center w-full'>
@@ -18,8 +16,10 @@ function WorkExperience() {
 
       <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 items-center justify-between h-full'>
       {workData.Work.map((work, index) => (
-        <Card key={index} company={work.company} city={work.location} title={work.title} period={work.time} description={work.description} containerStyle='mx-6 my-12'/>
+        <Card key={index} id={index} company={work.company} city={work.location} title={work.title} period={work.time} description={work.description} containerStyle='mx-6 my-12'/>
+        
       ))}
+      
       </div>
 
     </div>
