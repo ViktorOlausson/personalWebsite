@@ -24,7 +24,7 @@ function InfoCard({id, company = "", city = "", title = "", period= "", descript
 
 
   return (
-    <div className={`flex flex-col min-w-96 lg:w-1/4 max-w-md shadow-lg shadow-zinc-700  ${containerStyle}`}> {/* Container div */}
+    <div className={`relative flex flex-col min-w-96 lg:w-1/4 max-w-md shadow-lg shadow-zinc-700  ${containerStyle}`}> {/* Container div */}
         <div className='bg-nav-prime px-1 py-0.5 h-14 flex flex-row align-middle justify-left cursor-pointer border border-black' onClick={() => _toggleMenu(id)}> {/* Heading div */}
           <div className='flex flex-col w-5/6'>
             <h1 className='text-white text-lg'><span className='font-semibold'>{company}, </span>{city}</h1>
@@ -37,7 +37,7 @@ function InfoCard({id, company = "", city = "", title = "", period= "", descript
           
         </div>
         {/* Shadow of when hidden */}
-        <div className={`bg-dropdown w-full px-2 overflow-hidden transition-all duration-300 ${active[id] ? styleActive : styleUnactive}`}> {/* content // dropdown container */}
+        <div className={`lg:absolute sm:relative lg:top-14 z-20 bg-dropdown w-full px-2 overflow-hidden transition-all duration-300 ${active[id] ? styleActive : styleUnactive}`}> {/* content // dropdown container */}
             <p className='text-white'>
               {description}
             </p>
