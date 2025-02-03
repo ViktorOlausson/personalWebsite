@@ -11,10 +11,8 @@ function WorkExperience() {
 
   return (
     <div className='flex flex-row align-middle justify-center w-full'>
-      
-      {/* <Card id="" company={company} city={location} title={title} period={time} description={description}/> */}
 
-      <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 items-center justify-between h-full '>
+      <div className='grid md:grid-cols-2 sm:grid-cols-1 xl:grid-cols-3 items-center justify-between h-full '>
       {workData.Work.map((work, index) => (
         <Card key={index} id={index} company={work.company} city={work.location} title={work.title} period={work.time} description={work.description} containerStyle='mx-6 my-12 lg:mb-40'/>
         
