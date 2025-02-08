@@ -31,8 +31,8 @@ function InfoCard({id, company = "", city = "", title = "", period= "", descript
             {/*<h2 className='text-neutral-300'>{title} <span className='font-bold'>|</span> {period}</h2>*/}
             <h2 className='text-neutral-300 flex'>{title} <span className='border-l-2 h-full block mx-2'></span> {period}</h2>
           </div>
-          <div className='w-1/6 flex justify-end items-center'> {/* drop-shadow-[0px_0px_6px_rgba(255,255,255,5)] */}
-            <ChevronLeftIcon className={`transition-all duration-300 size-12 px-0 ${active[id] ? "-rotate-90" : "rotate-0"} drop-shadow-[0px_0px_6px_rgba(158,158,188,5)]`} strokeWidth={2}/>
+          <div className='w-1/6 flex justify-end items-center'> {/* drop-shadow-[0px_0px_6px_rgba(158,158,188,5)] */}
+            <ChevronLeftIcon className={`transition-all duration-300 size-12 px-0 ${active[id] ? "-rotate-90" : "rotate-0"}`} strokeWidth={2}/>
           </div>
           
         </div>
