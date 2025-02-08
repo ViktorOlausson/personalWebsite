@@ -19,8 +19,8 @@ const heighUnActive = "max-h-0"
 const dropdownStyle = "bg-dropdown absolute overflow-hidden transition-all duration-300"
 const dropdownUnActive = `${heighUnActive} ${dropdownStyle}`
 const dropdownActive = `${heighActive} ${dropdownStyle}`
-const arrowHidden = ""
-const arrowShow = "-rotate-90"
+const arrowHidden = "transition-transform duration-300"
+const arrowShow = "-rotate-90 transition-transform duration-300"
 
 //add if currentPath contains experience set active
 
