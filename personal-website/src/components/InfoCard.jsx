@@ -25,7 +25,7 @@ function InfoCard({id, company = "", city = "", title = "", period= "", descript
 
   return (
     <div className={`relative flex flex-col min-w-96 lg:w-1/4 max-w-md shadow-lg shadow-zinc-700  ${containerStyle}`}> {/* Container div */}
-        <div className='bg-nav-prime px-1 py-0.5 h-14 flex flex-row align-middle justify-left cursor-pointer border border-black' onClick={() => _toggleMenu(id)}> {/* Heading div */}
+        <div className='bg-nav-prime px-1 py-0.5 h-14 flex flex-row align-middle justify-left cursor-pointer ' onClick={() => _toggleMenu(id)}> {/* Heading div  border border-black*/}
           <div className='flex flex-col w-5/6'>
             <h1 className='text-white text-lg'><span className='font-semibold'>{company}, </span>{city}</h1>
             {/*<h2 className='text-neutral-300'>{title} <span className='font-bold'>|</span> {period}</h2>*/}
