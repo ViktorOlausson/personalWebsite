@@ -46,8 +46,7 @@ function Header() {
       {/* border frame: border-2 border-border-gray */}
       <Container className='place-content-center h-full' maxWidth='max-w-9xl' paddingX=''>
         <nav className='flex h-full align-middle'>
-          <div className='w-1/6 place-content-center'> {/* Logo div */}
-          </div>
+          
               <ul className='flex ml-auto'>
 
                 {navItems.map((item) => item.dropdownItems ? (
@@ -58,7 +57,7 @@ function Header() {
                       <p className='mx-1.5 font-semibold'>{item.name}</p>
                       <ChevronLeftIcon className={`${hidden ? arrowHidden : arrowShow} transition-all duration-300 size-8 px-0`} strokeWidth={2}/>
                     </Button>
-                    <div className={`${hidden ? dropdownUnActive : dropdownActive} w-48`} onMouseEnter={() => 
+                    <div className={`${hidden ? dropdownUnActive : dropdownActive} w-48 shadow-lg shadow-zinc-700 `} onMouseEnter={() => 
                     setHidden(false)} onMouseLeave={() => setHidden(true)}>
                       <ul className='flex flex-col py-2 justify-center'>
                         {item.dropdownItems.map((dropdownItem) => (
