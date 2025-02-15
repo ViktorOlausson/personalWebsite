@@ -96,7 +96,7 @@ function Home() {
           To find my contact details please press the button below
           </h2>
         </div>
-        <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/contact")}>Projects</Button>
+        <Button className={`${buttonStyle}`} padding={buttonPadding} onClick={() => navigate("/contact")}>Contact Me</Button>
         <div className='flex flex-row justify-between mt-4 '>
 
           <a href="https://twitter.com/__viktor__1/" target='blank' className={`${anchorStyle}`}>
